@@ -1,3 +1,5 @@
+package exercise1.author;
+
 public class Author {
     private String name, email;
     private char gender;
@@ -26,7 +28,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author[name=" + name + ", email=" + email + ", gender=" + gender + "]";
+        return "exercise1.author.Author[name=" + name + ", email=" + email + ", gender=" + gender + "]";
 
     }
 }
