@@ -15,17 +15,16 @@ A method `setXY()` to set both `x` and `y`.   (5 points)
 
 A method `getXY()` which returns the `x` and `y` in a 2-element `int` array. (5 points)
 
-- A `toString()` method that returns a string description of the instance in the format "`(_x_, _y_)`".   (5 points)
+- A `toString()` method that returns a string description of the instance in the format "`(x, y)`".   (5 points)
 - A method called `distance(int x, int y)` that returns the distance from _this_ point to another point at the given `(x, y)`  (5 points)
 - An overloaded `distance(MyPoint another)` that returns the distance from _this_ point to the given `MyPoint` instance (called another), e.g., (5 points)
 - Another overloaded `distance()` method that returns the distance from this point to the origin `(0,0)`, e.g.,  (5 points)
 
 **You are required to:**
 
--
-  1. **1.** Write the code for the class `MyPoint`.
-  2. **2.** Write a test program  (called `TestMyPoint`) to test all the methods defined in the class. (10 points)
-  3. **3.** Write a program that allocates 10 points in an array of `MyPoint`, and initializes to (1, 1), (2, 2), ... (10, 10).  (10 points)
+  1. Write the code for the class `MyPoint`.
+  2. Write a test program  (called `TestMyPoint`) to test all the methods defined in the class. (10 points)
+  3. Write a program that allocates 10 points in an array of `MyPoint`, and initializes to (1, 1), (2, 2), ... (10, 10).  (10 points)
 
 ## Exercise 2: The `MyTriangle` and `MyPoint` Classes(35 points)
 
@@ -38,7 +37,7 @@ It contains:
 - Three `private` instance variables `v1`, `v2`, `v3` (instances of `MyPoint`), for the three vertices.
 - A constructor that constructs a `MyTriangle` with three set of coordinates, `v1=(x1, y1), v2=(x2, y2), v3=(x3, y3)`. (5 points)
 - An overloaded constructor that constructs a `MyTriangle` given three instances of `MyPoint`. (5 points)
-- A `toString()` method that returns a string description of the instance in the format `"MyTriangle[v1=(_x_1,_y_1),v2=(_x_2,_y_2),v3=(_x_3,_y_3)]"`. (5 points)
+- A `toString()` method that returns a string description of the instance in the format `"MyTriangle[v1=(x1,y1),v2=(x2,y2),v3=(x3,y3)]"`. (5 points)
 - A `getPerimeter()` method that returns the length of the perimeter in double. You should use the `distance()` method of `MyPoint` to compute the perimeter. (5 points)
 
 - A method `printType()`, which prints `"equilateral"` if all the three sides are equal, `"isosceles"` if any two of the three sides are equal, or `"scalene"` if the three sides are different. (5 points)
@@ -109,7 +108,7 @@ The class `Coffee` models a coffee product. It extends class `Product`.
 
 _Instance variables:_
 
-- `rigin`. The origin of the coffee
+- `origin`. The origin of the coffee
 - `roast`. The roast of the coffee
 - `flavor`. The flavor of the coffee
 - `aroma`. The aroma of the coffee
@@ -178,7 +177,7 @@ Class `OrderItem` models an item in an order.
 
 _Instance variables:_
 
-- `product`. This instance variable represents the one-way association between `OrderItem` and `Product`. It contains a reference to a Product object.
+- `product`. This instance variable represents the one-way association between `OrderItem` and `Product`. It contains a reference to a `Product` object.
 
 - `quantity`. The quantity of the product in the order.
 
@@ -221,7 +220,7 @@ Complete implementations of the following test drivers are provided in the stude
 
 The following files are needed to complete this assignment:
 
-- [_student-files.zip_](https://www.icarnegie.com/content/SSD/SSD3/4.2.0.0/normal/pg-class-imp/pg-impl-class/assm-exer-impl-class/pool-pr-impl-class/qn-pr-impl-class-cof-gou-sys/handout/student-files.zip) — Download this file. This archive contains the following:
+- _student-files.zip_— Download this file. This archive contains the following:
   - _TestProduct.java_
   - _TestCoffee.java_
   - _TestCoffeeBrewer.java_
