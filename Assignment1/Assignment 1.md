@@ -47,8 +47,6 @@ public String getAuthorName() {
 }
 ```
 
-
-
 - A `toString()` that returns `"Book[name=?,Author[name=?,email=?,gender=?],price=?,qty=?"`.  You should reuse Author's `toString()`.
 
 Write the Book class (which uses the Author class written earlier). Also write a test driver called  **`TestBook`**  ,It contains:
