@@ -59,9 +59,15 @@ The user will be able to display the sales information in three formats: plain t
 #### Description
 The following class diagram shows how the singleton and strategy pattern will be used in your implementation:
 
-<center>
 
-![a3-f1.png](https://i.loli.net/2019/09/11/ClMKXLnxJZfGHcd.png)****
+
+![a3-f1.png](https://i.loli.net/2019/09/11/ClMKXLnxJZfGHcd.png){:height="100%" width="100%"}
+
+
+
+
+
+
 
 **Figure 1** _Portion of Gourmet Coffee System class diagram_
 
@@ -160,7 +166,7 @@ _Constructor and methods:_
 - Each order in the sales information should begin with horizontal line, that is, an `<hr>` tag.
 
 - Each order in the sales information should have the following format:
-    
+  
 ```html
   <hr>
   <h4>Total = totalCost</h4>
@@ -175,21 +181,21 @@ _Constructor and methods:_
         	<b>quantity:</b> quantityN<br>
         	<b>price:</b> priceN
     	</p>
-    ```
-    
+```
+
     - `quantityX` is the quantity of the product.
     - `codeX` is the code of the product.
     - `priceX` is the price of the product.
     - `totalCost` is the total cost of the order.
-    
+
 - The string should end with the following HTML:
   
 ```html
       </body>
   </html>
-  ```
-  
-  
+```
+
+
 ##### Class `XMLSalesFormatter`
 Class `XMLSalesFormatter` implements the interface `SalesFormatter`. This class is implemented as a singleton so a new object will not be created every time the XML format is used.
 
@@ -386,4 +392,3 @@ Upon completion, submit **only** the following:
 4. XMLSalesFormatter.java, XMLSalesFormatter.class
 5. GourmetCoffee.java, GourmetCoffee.class
 6. A word file with running results of the program.
- 
