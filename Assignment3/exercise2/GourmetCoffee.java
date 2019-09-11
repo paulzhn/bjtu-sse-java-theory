@@ -1,4 +1,8 @@
+
+
 import java.io.*;
+
+
 import java.util.*;
 //import java.text.*;
 
@@ -45,8 +49,12 @@ public class GourmetCoffee {
     /**
      * Constructs a <code>GourmetCoffee</code> object and
      * initializes the catalog and sales data.
+     * - `quantityX` is the quantity of the product.
+     * - `codeX` is the code of the product.
+     * - `priceX` is the price of the product.
+     * - `totalCost` is the total cost of the order.
      *
-     * @param initialCatalog a product catalog
+     *
      */
     private GourmetCoffee() {
 
@@ -217,16 +225,15 @@ public class GourmetCoffee {
      * @param newFormatter a sales formatter
      */
     private void setSalesFormatter(SalesFormatter newFormatter) {
-
-        /* PLACE YOUR CODE HERE */
+        salesFormatter = newFormatter;
     }
 
     /**
      * Displays the sales information in the current format.
      */
     private void displaySales() {
-
-        /* PLACE YOUR CODE HERE */
+        stdOut.print(salesFormatter.formatSales(sales));
+        stdOut.flush();
     }
 
     /**
@@ -240,19 +247,19 @@ public class GourmetCoffee {
         while (choice != 0) {
 
             if (choice == 1) {
-
-                /* PLACE YOUR CODE HERE */
+                setSalesFormatter(PlainTextSalesFormatter.getSingletonInstance());
 
             } else if (choice == 2) {
-
+                setSalesFormatter(HTMLSalesFormatter.getSingletonInstance());
                 /* PLACE YOUR CODE HERE */
 
             } else if (choice == 3) {
-
+                setSalesFormatter(XMLSalesFormatter.getSingletonInstance());
                 /* PLACE YOUR CODE HERE */
 
             }
 
+            displaySales();
             choice = getChoice();
         }
     }
