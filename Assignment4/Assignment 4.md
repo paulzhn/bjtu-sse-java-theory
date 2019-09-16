@@ -12,13 +12,13 @@ Tasks:
 
 1. Please use the `extends` keyword to create a custom exception class `MyException`. **(5 points)**
 
-Please create a second exception class `MySpecialException` which is a subclass of `MyException`. **(5 points)**
+   Please create a second exception class `MySpecialException` which is a subclass of `MyException`. **(5 points)**
 
 2. Please create a class `ExceptionTest`.
-     1. The class has two methods `testMException`() and `testMSException`(). The method `testMException` prints a message `"MyException is thrown"` and throws `MyException`. The method `testMSException` prints a message `"MySpecialException is thrown"` and throws `MySpecialException`. (5 points)
+     1. The class has two methods `testMException()` and `testMSException()`. The method `testMException` prints a message `"MyException is thrown"` and throws `MyException`. The method `testMSException` prints a message `"MySpecialException is thrown"` and throws `MySpecialException`. **(5 points)**
      2. In the main() method of the class, the two methods `testMException()` and `testMSException()` are invoked. `testMException()` and `testMSException()` are put into two different try-catch blocks. For each method, first `MySpecialException` is caught and then `MyException` is caught and then a **finally** clause is used at the end of all the exception handlers. In the catch clause to catch `MySpecialException` , a message `"MySpecialException is caught"` is printed. In the catch clause to catch `MyException` , a message `"MyException is caught"` is printed. In the finally clause, a message `"Here is finally clause"` is printed. **(10 points)**
 
-     3. After finally clause, print a message "This is the end of main() method". **(1 points)**
+     3. After finally clause, print a message `"This is the end of main() method"`. **(1 points)**
 
 3. Please run the program, observe the result and make clear why such a result is produced.
 
@@ -111,7 +111,7 @@ Implement all methods in class `StudentArrayList`. Follow Sun&#39;s code convent
        	Student[123,Albert Einstein,100],
        	Student[96,Isaac Newton,90]}
 
-5. **Implement** the method `hasStudent`. Use a for-each loop to implement this method. **(10 points)**
+5. **Implement** the method `hasStudent`. Use a `for-each` loop to implement this method. **(10 points)**
 
 - `public static boolean hasStudent(ArrayList<Student> arrayList, int id)`
 
@@ -127,7 +127,7 @@ Implement all methods in class `StudentArrayList`. Follow Sun&#39;s code convent
 
   If `hasStudent` is passed this array list and the id `321`, it will return `false`.
 
-6. **Implement** the method `countGradeGreaterOrEqual`. Use a for-each loop to implement this method. **(10 points)**
+6. **Implement** the method `countGradeGreaterOrEqual`. Use a `for-each` loop to implement this method. **(10 points)**
 
 - `public static int countGradeGreaterOrEqual(ArrayList<Student> arrayList, int grade)` 
   This method takes an array list of `Student` objects and a grade, and returns the number of students in the specified array list whose grade is greater than or equal to the specified grade.
@@ -156,7 +156,7 @@ Implement all methods in class `StudentArrayList`. Follow Sun&#39;s code convent
 
   If `getMinGrade` is passed this array list, it will return `80`.
 
-8. **Implement** the method `getGradeAverage`. Use a for-each loop to implement this method. **(10 points)**
+8. **Implement** the method `getGradeAverage`. Use a `for-each` loop to implement this method. **(10 points)**
 
 - `public static double getGradeAverage(ArrayList<Student> arrayList)`
 
@@ -418,8 +418,8 @@ Implement classes Catalog, Order, and Sales. Document your code using Javadoc an
     ```
 ### Submission
 Upon completion, submit **only** the following.
-1. *Catalog.java* ,*Catalog.class*
-2. *Order.java* ,*Order.class*
-3. *Sales.java* ,*Sales.class*
-4. *GourmetCoffee.java* ,*GourmetCoffee.class*
+1. *Catalog.java*, *Catalog.class*
+2. *Order.java*, *Order.class*
+3. *Sales.java*, *Sales.class*
+4. *GourmetCoffee.java*, *GourmetCoffee.class*
 5. a word file including the program running results

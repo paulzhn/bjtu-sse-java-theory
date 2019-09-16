@@ -30,4 +30,6 @@ hs_err_pid*
 *.iml
 
 !/Assignment3/exercise2/lib/*
+!/Assignment4/exercise3/lib/*
+
 
