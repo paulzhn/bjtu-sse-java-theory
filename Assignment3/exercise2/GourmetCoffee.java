@@ -260,7 +260,14 @@ public class GourmetCoffee {
             }
 
             displaySales();
+//            for(int i = 0; i < 100000 ; i++);
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                
+            }
             choice = getChoice();
+
         }
     }
 }
