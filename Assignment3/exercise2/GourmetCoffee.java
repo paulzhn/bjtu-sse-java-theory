@@ -3,6 +3,7 @@
 import java.io.*;
 
 
+import java.sql.Time;
 import java.util.*;
 //import java.text.*;
 
@@ -53,8 +54,6 @@ public class GourmetCoffee {
      * - `codeX` is the code of the product.
      * - `priceX` is the price of the product.
      * - `totalCost` is the total cost of the order.
-     *
-     *
      */
     private GourmetCoffee() {
 
@@ -251,23 +250,16 @@ public class GourmetCoffee {
 
             } else if (choice == 2) {
                 setSalesFormatter(HTMLSalesFormatter.getSingletonInstance());
-                /* PLACE YOUR CODE HERE */
 
             } else if (choice == 3) {
                 setSalesFormatter(XMLSalesFormatter.getSingletonInstance());
-                /* PLACE YOUR CODE HERE */
+
 
             }
 
             displaySales();
-//            for(int i = 0; i < 100000 ; i++);
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-                
-            }
+            for (int i = 0; i < 100000; i++) ; // add a delay to postpone stderr buffer out
             choice = getChoice();
-
         }
     }
 }

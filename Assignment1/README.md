@@ -1,0 +1,1 @@
+`StringBuffer.reverse()` would reverse the origin string, instead of only returning a reversed string.
