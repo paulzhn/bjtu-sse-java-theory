@@ -158,7 +158,7 @@ public class GourmetCoffee {
         return sales;
     }
 
-    /*
+    /**
      * Presents the user with a menu of options and executes the
      * selected task.
      */
@@ -188,11 +188,13 @@ public class GourmetCoffee {
                 displayTotalQuantityOfProducts();
             }
 
+            for (int i = 0; i < 100000; i++) ;
+
             choice = getChoice();
         }
     }
 
-    /*
+    /**
      * Displays a menu of options and verifies the user's choice.
      *
      * @return an integer in the range [0,7]
@@ -385,9 +387,13 @@ public class GourmetCoffee {
      * @param product the <code>Product</code> object to be displayed.
      */
     public void displayNumberOfOrders(Product product) {
-
-        /* PLACE YOUR CODE HERE */
-
+        int number = 0;
+        for (Order sale : sales) {
+            if (sale.getItem(product) != null) {
+                number++;
+            }
+        }
+        System.out.println("Number of orders that contains the product " + product.getCode() + ": " + number);
     }
 
     /**
@@ -395,17 +401,15 @@ public class GourmetCoffee {
      * product in the catalog.
      */
     public void displayTotalQuantityOfProducts() {
-
-        /* PLACE YOUR CODE HERE */
-
+        // todo
     }
 
-    /*
+    /**
      * Prompts user for a product code and locates the associated
      * <code>Product</code> object.
      *
      * @return reference to the <code>Product</code> object with
-     *         the specified code
+     * the specified code
      */
     private Product readProduct() throws IOException {
 
@@ -425,7 +429,7 @@ public class GourmetCoffee {
         } while (true);
     }
 
-    /*
+    /**
      * Prompts user for the product quantity and verifies the
      * user's response.
      *

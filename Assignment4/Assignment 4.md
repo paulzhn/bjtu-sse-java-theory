@@ -256,7 +256,7 @@ The class `Catalog` models a product catalog. This class implements the interfac
 
 _Instance variables:_
 
-- _`products`_ — An `ArrayList` collection that contains references to instances of class Product.
+- _`products`_ — An `ArrayList` collection that contains references to instances of class `Product`.
 _Constructor and public methods:_
 - _`public Catalog()`_ — Creates the collection `products`, which is initially empty.
 
@@ -386,36 +386,36 @@ Implement classes Catalog, Order, and Sales. Document your code using Javadoc an
   The following is a description of the information included in the format above:
 
   - _ProductCode_ — the code of the product
+- _Quantity_ — the total quantity of product that has been sold in the store
+  
+  Compile and execute the class `GourmetCoffee`. Verify that the method `displayTotalQuantityOfProducts` works correctly. The following is the output that should be displayed for the orders preloaded by the method `loadSales`:
 
-  - _Quantity_ — the total quantity of product that has been sold in the store
-    Compile and execute the class `GourmetCoffee`. Verify that the method `displayTotalQuantityOfProducts` works correctly. The following is the output that should be displayed for the orders preloaded by the method `loadSales`:
-
-    ```
-    [0] Quit
-    [1] Display catalog
-    [2] Display product
-    [3] Display current order
-    [4] Add|modify product to|in current order
-    [5] Remove product from current order
-    [6] Register sale of current order
-    [7] Display sales
-    [8] Display number of orders with a specific product
-    [9] Display the total quantity sold for each product
-    choice > 9
-    C001 9
-    C002 4
-    C003 5
-    C004 0
-    C005 8
-    B001 2
-    B002 1
-    B003 2
-    A001 12
-    A002 6
-    A003 5
-    A004 6
-    A005 0
-    ```
+  ```
+  [0] Quit
+  [1] Display catalog
+  [2] Display product
+  [3] Display current order
+  [4] Add|modify product to|in current order
+  [5] Remove product from current order
+  [6] Register sale of current order
+  [7] Display sales
+  [8] Display number of orders with a specific product
+  [9] Display the total quantity sold for each product
+  choice > 9
+  C001 9
+  C002 4
+  C003 5
+  C004 0
+  C005 8
+  B001 2
+  B002 1
+  B003 2
+  A001 12
+  A002 6
+  A003 5
+  A004 6
+  A005 0
+  ```
 ### Submission
 Upon completion, submit **only** the following.
 1. *Catalog.java*, *Catalog.class*

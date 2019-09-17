@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Catalog implements Iterable<Product>{
+public class Catalog implements Iterable<Product> {
     ArrayList<Product> products;
 
     public Catalog() {
@@ -19,8 +19,9 @@ public class Catalog implements Iterable<Product>{
 
     public Product getProduct(String code) {
         for (Product product : products) {
-            if(product.getCode() == code)
+            if (product.getCode().equals(code)) {
                 return product;
+            }
         }
         return null;
     }
