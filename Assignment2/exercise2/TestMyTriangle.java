@@ -1,6 +1,5 @@
 package exercise2;
 
-import exercise1.MyPoint;
 
 public class TestMyTriangle {
     public static void main(String[] args) {

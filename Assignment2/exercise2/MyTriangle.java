@@ -1,7 +1,5 @@
 package exercise2;
 
-import exercise1.MyPoint;
-
 public class MyTriangle {
     private MyPoint v1, v2, v3;
 

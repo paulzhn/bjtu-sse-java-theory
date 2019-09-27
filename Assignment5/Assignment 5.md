@@ -246,17 +246,19 @@ _Methods:_
 
 - `private Product readProduct(String line) throws DataFormatException` 
 
-  This method reads a line of coffee-accessory data. It uses the class `StringTokenizer` to extract the accessory data in the specified line. If the line is error free, this method returns a Product object that encapsulates the accessory data. If the line has errors, that is, if it does not have the expected number of tokens or the token that should contain a double does not; this method throws a `DataFormatException` that contains the line of malformed data.
+  This method reads a line of coffee-accessory data. It uses the class `StringTokenizer` to extract the accessory data in the specified line. If the line is error free, this method returns a `Product` object that encapsulates the accessory data. If the line has errors, that is, if it does not have the expected number of tokens or the token that should contain a double does not; this method throws a `DataFormatException` that contains the line of malformed data.
 
 - `private Coffee readCoffee(String line) throws DataFormatException`
 
   This method reads a line of coffee data. It uses the class `StringTokenizer` to extract the coffee data in the specified line. If the line is error free, this method returns a Coffee object that encapsulates the coffee data. If the line has errors, that is, if it does not have the expected number of tokens or the token that should contain a double does not; this method throws a `DataFormatException` that contains the line of malformed data.
 
 - `private CoffeeBrewer readCoffeeBrewer(String line) throws DataFormatException`
+  
   This method reads a line of coffee-brewer data. It uses the class `StringTokenizer` to extract the brewer data in the specified line. If the line is error free, this method returns a `CoffeeBrewer` object that encapsulates the brewer data. If the line has errors, that is, if it does not have the expected number of tokens or the tokens that should contain a number do not; this method throws a `DataFormatException` that contains the line of malformed data.
+  
 - `public Catalog loadCatalog(String filename) throws FileNotFoundException, IOException, DataFormatException`
 
-  This method loads the information in the specified file into a product catalog and returns the catalog. It begins by opening the file for reading. It then proceeds to read and process each line in the file. The method [String.startsWith](http://java.sun.com/j2se/1.5/docs/api/java/lang/String.html#startsWith(java.lang.String)) is used to determine the line type:
+  This method loads the information in the specified file into a product catalog and returns the catalog. It begins by opening the file for reading. It then proceeds to read and process each line in the file. The method [`String.startsWith`](http://java.sun.com/j2se/1.5/docs/api/java/lang/String.html#startsWith(java.lang.String)) is used to determine the line type:
     - If the line type is "Product", the method `readProduct` is invoked.
     - If the line type is "Coffee", the method `readCoffee` is invoked.
     - If the line type is "Brewer", the method `readCoffeeBrewer` is invoked.
