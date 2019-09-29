@@ -31,5 +31,5 @@ hs_err_pid*
 
 !/Assignment3/exercise2/lib/*
 !/Assignment4/exercise3/lib/*
-
+!/lib/*
 
