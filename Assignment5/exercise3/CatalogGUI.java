@@ -1,9 +1,11 @@
-import java.util.*;
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-import java.io.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
 /**
  * This class displays the catalog of the gourmet coffee system.
@@ -21,25 +23,39 @@ import java.io.*;
  */
 public class CatalogGUI extends JPanel {
 
-    /** Standard error stream */
+    /**
+     * Standard error stream
+     */
     static private PrintWriter stdErr = new PrintWriter(System.err, true);
 
-    /** Window width in pixels */
+    /**
+     * Window width in pixels
+     */
     static private int WIDTH = 420;
 
-    /** Window height in pixels */
+    /**
+     * Window height in pixels
+     */
     static private int HEIGHT = 340;
 
-    /** Size of the list cell in pixels */
+    /**
+     * Size of the list cell in pixels
+     */
     static private int CELL_SIZE = 50;
 
-    /** Visible rows in list */
+    /**
+     * Visible rows in list
+     */
     static private int LIST_ROWS = 10;
 
-    /** Rows in status text area */
+    /**
+     * Rows in status text area
+     */
     static private int STATUS_ROWS = 5;
 
-    /** Rows in status text area */
+    /**
+     * Rows in status text area
+     */
     static private int STATUS_COLS = 40;
 
     private JList catalogList;
@@ -47,47 +63,6 @@ public class CatalogGUI extends JPanel {
     private JTextArea statusTextArea;
 
     private Catalog catalog;
-
-    /**
-     * Loads a product catalog and starts the application.
-     *
-     * @param args String arguments.  Not used.
-     * @throws IOException if there are errors in the loading
-     *                     the catalog.
-     */
-    public static void main(String[] args) throws IOException {
-
-        String filename = "";
-
-        if (args.length != 1) {
-            filename = "catalog.dat";
-        } else {
-            filename = args[0];
-        }
-        try {
-            Catalog catalog =
-                    (new FileCatalogLoader()).loadCatalog(filename);
-
-            JFrame frame = new JFrame("Catalog Gourmet Coffee");
-
-            frame.setContentPane(new CatalogGUI(catalog));
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(WIDTH, HEIGHT);
-            frame.setResizable(true);
-            frame.setVisible(true);
-
-        } catch (FileNotFoundException fnfe) {
-            stdErr.println("The file does not exist");
-
-            System.exit(1);
-
-        } catch (DataFormatException dfe) {
-            stdErr.println("The file contains malformed data: "
-                    + dfe.getMessage());
-
-            System.exit(1);
-        }
-    }
 
     /**
      * Instantiates the components and arranges them in a window.
@@ -131,11 +106,52 @@ public class CatalogGUI extends JPanel {
     }
 
     /**
+     * Loads a product catalog and starts the application.
+     *
+     * @param args String arguments.  Not used.
+     * @throws IOException if there are errors in the loading
+     *                     the catalog.
+     */
+    public static void main(String[] args) throws IOException {
+
+        String filename = "";
+
+        if (args.length != 1) {
+            filename = "catalog.dat";
+        } else {
+            filename = args[0];
+        }
+        try {
+            Catalog catalog =
+                    (new FileCatalogLoader()).loadCatalog(filename);
+
+            JFrame frame = new JFrame("Catalog Gourmet Coffee");
+
+            frame.setContentPane(new CatalogGUI(catalog));
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(WIDTH, HEIGHT);
+            frame.setResizable(true);
+            frame.setVisible(true);
+
+        } catch (FileNotFoundException fnfe) {
+            stdErr.println("The file does not exist");
+
+            System.exit(1);
+
+        } catch (DataFormatException dfe) {
+            stdErr.println("The file contains malformed data: "
+                    + dfe.getMessage());
+
+            System.exit(1);
+        }
+    }
+
+    /**
      * Obtains a {@link JPanel} object with the information of a product.
      *
-     * @param dataFields  an {@link ArrayList} of {@link DataField}
-     *                    with the product information.
-     * @return  a {@link JPanel} with the product information.
+     * @param dataFields an {@link ArrayList} of {@link DataField}
+     *                   with the product information.
+     * @return a {@link JPanel} with the product information.
      */
     private JPanel getDataFieldsPanel(ArrayList<DataField> dataFields) {
         ArrayList<JTextField> textFields = new ArrayList<>();
@@ -144,81 +160,21 @@ public class CatalogGUI extends JPanel {
         GridBagConstraints c = new GridBagConstraints();
 
         c.gridwidth = 0;
-        panel.add(new JLabel(), c);
-        c.gridwidth = 1;
         c.anchor = GridBagConstraints.NORTHWEST;
         c.fill = GridBagConstraints.HORIZONTAL;
-        panel.add(new JLabel("Code: ", SwingConstants.LEFT), c);
-        JTextField code = new JTextField();
-        c.weightx = 1;
-        c.gridwidth = 0;
-        panel.add(code, c);
-        textFields.add(code);
-        panel.add(new JLabel("Description: ", SwingConstants.LEFT));
-        JTextField description = new JTextField();
-        panel.add(description, c);
-        textFields.add(description);
-        c.weightx = 0;
-        c.gridwidth = 1;
-        panel.add(new JLabel("Price: ", SwingConstants.LEFT), c);
-        JTextField price = new JTextField();
-        c.weightx = 1;
-        c.gridwidth = 0;
-        panel.add(price, c);
-        textFields.add(price);
-        c.weightx = 0;
-        c.gridwidth = 1;
-        panel.add(new JLabel("Origin: ", SwingConstants.LEFT), c);
-        JTextField origin = new JTextField();
-        c.weightx = 1;
-        c.gridwidth = 0;
-        panel.add(origin, c);
-        textFields.add(origin);
-        c.weightx = 0;
-        c.gridwidth = 1;
-        panel.add(new JLabel("Roast: ", SwingConstants.LEFT), c);
-        JTextField roast = new JTextField();
-        c.weightx = 1;
-        c.gridwidth = 0;
-        panel.add(roast, c);
-        textFields.add(roast);
-        c.weightx = 0;
-        c.gridwidth = 1;
-        panel.add(new JLabel("Flavor: ", SwingConstants.LEFT), c);
-        JTextField flavor = new JTextField();
-        c.weightx = 1;
-        c.gridwidth = 0;
-        panel.add(flavor, c);
-        textFields.add(flavor);
-        c.weightx = 0;
-        c.gridwidth = 1;
-        panel.add(new JLabel("Aroma: ", SwingConstants.LEFT), c);
-        JTextField aroma = new JTextField();
-        c.weightx = 1;
-        c.gridwidth = 0;
-        panel.add(aroma, c);
-        textFields.add(aroma);
-        c.weightx = 0;
-        c.gridwidth = 1;
-        panel.add(new JLabel("Acidity: ", SwingConstants.LEFT), c);
-        JTextField acidity = new JTextField();
-        c.weightx = 1;
-        c.gridwidth = 0;
-        panel.add(acidity, c);
-        textFields.add(acidity);
-        c.weightx = 0;
-        c.gridwidth = 1;
-        panel.add(new JLabel("Body: ", SwingConstants.LEFT), c);
-        JTextField body = new JTextField();
-        c.weightx = 1;
-        c.gridwidth = 0;
-        panel.add(body, c);
-        textFields.add(body);
-        for (int i = 0; i < dataFields.size(); i++) {
-            textFields.get(i).setText(dataFields.get(i).getValue());
-        }
-        // todo: need to modify
+        panel.add(new JLabel(), c);
 
+        JTextField textField;
+        for (DataField dataField : dataFields) {
+            c.weightx = 0;
+            c.gridwidth = 1;
+            panel.add(new JLabel(dataField.getName() + ": ", SwingConstants.LEFT), c);
+            textField = new JTextField();
+            c.weightx = 1;
+            c.gridwidth = 0;
+            panel.add(textField, c);
+            textField.setText(dataField.getValue());
+        }
         return panel;
     }
 
