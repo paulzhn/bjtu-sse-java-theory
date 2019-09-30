@@ -364,7 +364,7 @@ public class GourmetCoffeeGUI extends JPanel {
          */
         @Override
         public void actionPerformed(ActionEvent event) {
-            if(orderList.getSelectedValue() != null) {
+            if (orderList.getSelectedValue() != null) {
                 currentOrder.removeItem(currentOrder.getItem(((OrderItem)orderList.getSelectedValue()).getProduct()));
                 orderList.setListData(currentOrder.getItems());
                 statusTextArea.setText("The product has been removed.");
@@ -434,7 +434,7 @@ public class GourmetCoffeeGUI extends JPanel {
             final JFileChooser chooser = new JFileChooser();
             File savePath;
             int returnVal = chooser.showSaveDialog(GourmetCoffeeGUI.this);
-            if(returnVal == JFileChooser.APPROVE_OPTION) {
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
                 savePath = chooser.getSelectedFile();
                 try {
                     BufferedWriter writer = new BufferedWriter(new FileWriter(savePath));
