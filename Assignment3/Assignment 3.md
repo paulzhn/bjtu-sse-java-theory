@@ -1,4 +1,4 @@
-# Assignment 3:
+# Assignment 3
 
 **(total 110 points)**
 
@@ -176,7 +176,6 @@ _Constructor and methods:_
               <b>price:</b> priceN
           </p>
   ```
-  
   
 - `quantityX` is the quantity of the product.
 - `codeX` is the code of the product.

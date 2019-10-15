@@ -401,7 +401,17 @@ public class GourmetCoffee {
      * product in the catalog.
      */
     public void displayTotalQuantityOfProducts() {
-        // todo
+        for (Product product : catalog) {
+            int count = 0;
+            for (Order sale : sales) {
+                for (OrderItem orderItem : sale) {
+                    if (orderItem.getProduct().equals(product)) {
+                        count += orderItem.getQuantity();
+                    }
+                }
+            }
+            System.out.println(product.getCode() + " " + count);
+        }
     }
 
     /**

@@ -1,4 +1,4 @@
-# Assignment 1:
+# Assignment 1
 
 ## Exercise 1: The Author and Book Classes
 

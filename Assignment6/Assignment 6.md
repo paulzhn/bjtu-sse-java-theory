@@ -1,4 +1,4 @@
-# Assignment 6:
+# Assignment 6
 
 **(total 30 points)**
 

@@ -1,4 +1,6 @@
-# Assignment 2:   (total 170 points)
+# Assignment 2
+
+**(total 170 points)**
 
 ## Exercise 1: The `MyPoint` Classes (60 points)
 

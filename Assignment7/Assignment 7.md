@@ -39,7 +39,7 @@
 ![1.jpg](https://i.loli.net/2019/09/29/5mJl263hsPaqQRn.jpg)
 
 <center><b>Figure 1</b></center>
-Write the server class named **`EchoServer`** , the server application will run on the server with IP xxx.xxx.xxx.xxx(for local computer, IP maybe 127.0.0.1) and listen on the network port number 4448. When server has started,  display "**wait for client request**" on the console, like the figure 2.
+2. Write the server class named **`EchoServer`** , the server application will run on the server with IP xxx.xxx.xxx.xxx(for local computer, IP maybe 127.0.0.1) and listen on the network port number 4448. When server has started,  display "**wait for client request**" on the console, like the figure 2.
 
 ![2.jpg](https://i.loli.net/2019/09/29/6CLtNoEKFkDyudl.jpg)
 
