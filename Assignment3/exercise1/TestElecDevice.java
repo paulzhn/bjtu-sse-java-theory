@@ -7,15 +7,14 @@ public class TestElecDevice {
         ed.turnOn();
         ed.turnOff();
         try {
-            if(args[0].equals("TV")) {
+            if (args[0].equals("TV")) {
                 ad = new TV();
-            } else if(args[0].equals("Radio")) {
+            } else if (args[0].equals("Radio")) {
                 ad = new Radio();
             } else {
                 ad = new AudioDevice();
             }
         } catch (Exception e) {
-            e.printStackTrace();
             ad = new AudioDevice();
         }
 
